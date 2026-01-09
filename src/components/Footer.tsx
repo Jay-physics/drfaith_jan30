@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { CONTACT_INFO } from "@/lib/config";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const PotentillaIcon = () => (
@@ -45,32 +47,40 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-[hsl(var(--footer-foreground))] mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
                   Home
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/about" 
+                <Link
+                  to="/about"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/insurance" 
+                <Link
+                  to="/insurance"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
                   Insurance
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/resources"
+                  className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
                   Contact Us
@@ -95,15 +105,18 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[hsl(var(--footer-accent))]" />
-                <span className="text-[hsl(var(--footer-foreground))]/90">(347) 913 3221</span>
+                <span className="text-[hsl(var(--footer-foreground))]/90">{CONTACT_INFO.phone}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[hsl(var(--footer-accent))]" />
-                <span className="text-[hsl(var(--footer-foreground))]/90">info@drfaithconsiglio.com</span>
+                <ObfuscatedEmail
+                  email={CONTACT_INFO.email}
+                  className="text-[hsl(var(--footer-foreground))]/90 hover:text-[hsl(var(--footer-accent))]"
+                />
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-[hsl(var(--footer-accent))]" />
-                <span className="text-[hsl(var(--footer-foreground))]/90">Lina Grand Central 18E 41st Street, 14th Floor, New York, NY 10017</span>
+                <span className="text-[hsl(var(--footer-foreground))]/90">{CONTACT_INFO.address.line1}, {CONTACT_INFO.address.line2}, {CONTACT_INFO.address.cityStateZip}</span>
               </div>
             </div>
           </div>

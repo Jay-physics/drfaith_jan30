@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import { CONTACT_INFO } from "@/lib/config";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -156,9 +158,9 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Lina Grand Central 18E 41st Street<br />
-                  14th Floor<br />
-                  New York, NY 10017
+                  {CONTACT_INFO.address.line1}<br />
+                  {CONTACT_INFO.address.line2}<br />
+                  {CONTACT_INFO.address.cityStateZip}
                 </p>
               </CardContent>
             </Card>
@@ -176,11 +178,14 @@ const Contact = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">info@drfaithconsiglio.com</span>
+                  <ObfuscatedEmail
+                    email={CONTACT_INFO.email}
+                    className="text-muted-foreground"
+                  />
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">(347) 913-3221</span>
+                  <span className="text-muted-foreground">{CONTACT_INFO.phone}</span>
                 </div>
               </CardContent>
             </Card>
@@ -216,71 +221,60 @@ const Contact = () => {
                   {/* Name Fields */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-sm font-medium">
-                        First Name *
-                      </Label>
                       <Input
                         id="firstName"
                         type="text"
+                        placeholder="First Name *"
                         value={formData.firstName}
                         onChange={(e) => handleInputChange("firstName", e.target.value)}
                         required
-                        className="bg-background/50 border-input/50 focus:border-primary"
+                        className="bg-background/50 border-input/50 focus:border-primary placeholder:text-muted-foreground/70"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-sm font-medium">
-                        Last Name *
-                      </Label>
                       <Input
                         id="lastName"
                         type="text"
+                        placeholder="Last Name *"
                         value={formData.lastName}
                         onChange={(e) => handleInputChange("lastName", e.target.value)}
                         required
-                        className="bg-background/50 border-input/50 focus:border-primary"
+                        className="bg-background/50 border-input/50 focus:border-primary placeholder:text-muted-foreground/70"
                       />
                     </div>
                   </div>
 
                   {/* Email */}
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium">
-                      Email Address *
-                    </Label>
                     <Input
                       id="email"
                       type="email"
+                      placeholder="Email Address *"
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       required
-                      className="bg-background/50 border-input/50 focus:border-primary"
+                      className="bg-background/50 border-input/50 focus:border-primary placeholder:text-muted-foreground/70"
                     />
                   </div>
 
                   {/* Phone */}
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">
-                      Phone Number *
-                    </Label>
                     <Input
                       id="phone"
                       type="tel"
+                      placeholder="Phone Number *"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
                       required
-                      className="bg-background/50 border-input/50 focus:border-primary"
+                      className="bg-background/50 border-input/50 focus:border-primary placeholder:text-muted-foreground/70"
                     />
                   </div>
 
                   {/* Services Dropdown */}
                   <div className="space-y-2">
-                    <Label htmlFor="service" className="text-sm font-medium">
-                      Service of Interest *
-                    </Label>
                     <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                      <SelectTrigger className="bg-background/50 border-input/50 focus:border-primary">
-                        <SelectValue placeholder="Select a service" />
+                      <SelectTrigger className="bg-background/50 border-input/50 focus:border-primary text-muted-foreground/70">
+                        <SelectValue placeholder="Service of Interest *" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="General Adult Psychiatry">General Adult Psychiatry</SelectItem>
@@ -295,16 +289,13 @@ const Contact = () => {
 
                   {/* Message */}
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-sm font-medium">
-                      Message (Optional)
-                    </Label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us more about what you're looking for..."
+                      placeholder="Message (Optional) - Tell us more about what you're looking for..."
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
                       rows={4}
-                      className="bg-background/50 border-input/50 focus:border-primary resize-none"
+                      className="bg-background/50 border-input/50 focus:border-primary resize-none placeholder:text-muted-foreground/70"
                     />
                   </div>
 

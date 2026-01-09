@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/insurance", label: "Insurance" },
   { to: "/about", label: "About Us" },
+  { to: "/resources", label: "Resources" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -62,9 +63,8 @@ const Header = () => {
             <Link
               key={to}
               to={to}
-              className={`transition-colors font-medium px-4 py-2 hover:text-[hsl(var(--nav-hover))] ${
-                isActive(to) ? "text-[hsl(var(--nav-hover))]" : "text-[hsl(var(--nav-primary))]"
-              }`}
+              className={`transition-colors font-medium px-4 py-2 hover:text-[hsl(var(--nav-hover))] ${isActive(to) ? "text-[hsl(var(--nav-hover))]" : "text-[hsl(var(--nav-primary))]"
+                }`}
               aria-current={isActive(to) ? "page" : undefined}
             >
               {label}
@@ -120,11 +120,10 @@ const Header = () => {
                       <Link
                         key={to}
                         to={to}
-                        className={`flex items-center px-3 py-3 text-base font-medium rounded-md transition-colors ${
-                          isActive(to)
+                        className={`flex items-center px-3 py-3 text-base font-medium rounded-md transition-colors ${isActive(to)
                             ? "text-[hsl(var(--nav-hover))]"
                             : "text-[hsl(var(--nav-primary))] hover:bg-accent hover:text-[hsl(var(--nav-hover))]"
-                        }`}
+                          }`}
                         aria-current={isActive(to) ? "page" : undefined}
                         onClick={() => setIsOpen(false)}
                       >
