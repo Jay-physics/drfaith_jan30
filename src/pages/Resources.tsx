@@ -61,34 +61,7 @@ const Resources = () => {
                         </CardContent>
                     </Card>
 
-                    {/* Patient Forms */}
-                    <Card className="border-border shadow-sm hover:shadow-md transition-shadow lg:col-span-1">
-                        <CardHeader>
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="p-2 rounded-full bg-primary/10 text-primary">
-                                    <FileText className="w-5 h-5" />
-                                </div>
-                                <CardTitle className="text-xl">Patient Forms</CardTitle>
-                            </div>
-                            <CardDescription>
-                                Download forms before your visit
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
-                                <span className="text-sm font-medium text-foreground">New Patient Intake</span>
-                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                            </a>
-                            <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
-                                <span className="text-sm font-medium text-foreground">Privacy Policy (HIPAA)</span>
-                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                            </a>
-                            <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
-                                <span className="text-sm font-medium text-foreground">Release of Information</span>
-                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                            </a>
-                        </CardContent>
-                    </Card>
+
 
                     {/* Useful Links */}
                     <Card className="border-border shadow-sm hover:shadow-md transition-shadow lg:col-span-1">
