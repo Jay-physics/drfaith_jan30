@@ -118,6 +118,20 @@ const Resources = () => {
                                 </div>
                                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                             </a>
+                            <a href="https://nationalmenopausefoundation.org/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
+                                <div className="flex flex-col">
+                                    <span className="text-sm font-medium text-foreground">National Menopause Foundation</span>
+                                    <span className="text-xs text-muted-foreground">Support & Info for Menopause</span>
+                                </div>
+                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </a>
+                            <a href="https://menopause.org/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
+                                <div className="flex flex-col">
+                                    <span className="text-sm font-medium text-foreground">The Menopause Society</span>
+                                    <span className="text-xs text-muted-foreground">Experts in Menopause & Aging</span>
+                                </div>
+                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </a>
                         </CardContent>
                     </Card>
 

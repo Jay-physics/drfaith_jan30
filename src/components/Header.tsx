@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
-const PotentillaIcon = () => (
+export const PotentillaIcon = () => (
   <svg
     width="24"
     height="20"
@@ -76,12 +76,14 @@ const Header = () => {
         <div className="flex items-center space-x-2">
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button
-              size="sm"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              New Patients
-            </Button>
+            <Link to="/request-appointment">
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Request Appointment
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Menu */}
@@ -121,8 +123,8 @@ const Header = () => {
                         key={to}
                         to={to}
                         className={`flex items-center px-3 py-3 text-base font-medium rounded-md transition-colors ${isActive(to)
-                            ? "text-[hsl(var(--nav-hover))]"
-                            : "text-[hsl(var(--nav-primary))] hover:bg-accent hover:text-[hsl(var(--nav-hover))]"
+                          ? "text-[hsl(var(--nav-hover))]"
+                          : "text-[hsl(var(--nav-primary))] hover:bg-accent hover:text-[hsl(var(--nav-hover))]"
                           }`}
                         aria-current={isActive(to) ? "page" : undefined}
                         onClick={() => setIsOpen(false)}
@@ -135,13 +137,14 @@ const Header = () => {
 
                 {/* Mobile Action Buttons */}
                 <div className="space-y-3 pt-6 border-t">
-                  <Button
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    New Patients
-                  </Button>
+                  <Link to="/request-appointment" onClick={() => setIsOpen(false)}>
+                    <Button
+                      size="lg"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    >
+                      Request Appointment
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </SheetContent>
