@@ -38,7 +38,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-[hsl(var(--footer-foreground))]/70 break-words">Renaissance School of Medicine</li>
               <li className="text-[hsl(var(--footer-foreground))]/70 break-words">Westchester Medical Center Residency</li>
-              <li className="text-[hsl(var(--footer-foreground))]/70 break-words">Mindfulness & Sports Psychology Certified</li>
+              <li className="text-[hsl(var(--footer-foreground))]/70 break-words">Mindfulness & Sports Psychiatry Focused</li>
             </ul>
           </div>
 
@@ -59,7 +59,7 @@ const Footer = () => {
                   to="/about"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               <li>

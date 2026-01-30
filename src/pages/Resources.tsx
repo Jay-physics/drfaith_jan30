@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ExternalLink, FileText, Phone, HeartPulse } from "lucide-react";
+import { ExternalLink, FileText, Phone, HeartPulse, BookOpen } from "lucide-react";
 
 const Resources = () => {
     return (
@@ -91,20 +91,61 @@ const Resources = () => {
                                 </div>
                                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                             </a>
-                            <a href="https://nationalmenopausefoundation.org/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
+                            <a href="https://sportspsychiatry.org/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
                                 <div className="flex flex-col">
-                                    <span className="text-sm font-medium text-foreground">National Menopause Foundation</span>
-                                    <span className="text-xs text-muted-foreground">Support & Info for Menopause</span>
+                                    <span className="text-sm font-medium text-foreground">ISSP</span>
+                                    <span className="text-xs text-muted-foreground">The International Society for Sports Psychiatry</span>
                                 </div>
                                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                             </a>
-                            <a href="https://menopause.org/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
+                            <a href="https://howtoadhd.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
                                 <div className="flex flex-col">
-                                    <span className="text-sm font-medium text-foreground">The Menopause Society</span>
-                                    <span className="text-xs text-muted-foreground">Experts in Menopause & Aging</span>
+                                    <span className="text-sm font-medium text-foreground">Neurodiversity University</span>
+                                    <span className="text-xs text-muted-foreground">How to ADHD</span>
                                 </div>
                                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                             </a>
+                            <a href="https://www.natezinsser.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group">
+                                <div className="flex flex-col">
+                                    <span className="text-sm font-medium text-foreground">Dr. Nathaniel Zinsser</span>
+                                    <span className="text-xs text-muted-foreground">Certified Mental Performance Coach</span>
+                                </div>
+                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </a>
+
+                        </CardContent>
+                    </Card>
+
+                    {/* Book Club */}
+                    <Card className="border-border shadow-sm hover:shadow-md transition-shadow lg:col-span-1">
+                        <CardHeader>
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="p-2 rounded-full bg-primary/10 text-primary">
+                                    <BookOpen className="w-5 h-5" />
+                                </div>
+                                <CardTitle className="text-xl">Book Club</CardTitle>
+                            </div>
+                            <CardDescription>
+                                Monthly readings for growth
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div className="space-y-2">
+                                <span className="text-xs font-semibold text-primary uppercase tracking-wider">January 2026</span>
+                                <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
+                                    <div className="aspect-[2/3] w-full overflow-hidden rounded-md mb-2 bg-secondary/20 h-64">
+                                        <img
+                                            src="/images/confident-mind.jpg"
+                                            alt="The Confident Mind"
+                                            className="w-full h-full object-contain transition-transform group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="flex items-center justify-between">
+                                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">The Confident Mind</h4>
+                                        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                                    </div>
+                                </a>
+                            </div>
                         </CardContent>
                     </Card>
 
