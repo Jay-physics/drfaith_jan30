@@ -130,19 +130,37 @@ const Resources = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <div className="space-y-2">
-                                <span className="text-xs font-semibold text-primary uppercase tracking-wider">January 2026</span>
+                            <div className="space-y-4">
                                 <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
-                                    <div className="aspect-[2/3] w-full overflow-hidden rounded-md mb-2 bg-secondary/20 h-64">
-                                        <img
-                                            src="/images/confident-mind.jpg"
-                                            alt="The Confident Mind"
-                                            className="w-full h-full object-contain transition-transform group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">The Confident Mind</h4>
-                                        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                                    <div className="flex flex-col space-y-3">
+                                        {/* Month Badge */}
+                                        <div className="self-start inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                                            JANUARY 2026
+                                        </div>
+
+                                        {/* Header Info */}
+                                        <div className="space-y-1">
+                                            <div className="flex items-start justify-between">
+                                                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                                                    The Confident Mind
+                                                </h4>
+                                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+                                            </div>
+                                            <p className="text-sm text-muted-foreground italic">
+                                                by Dr. Nate Zinsser
+                                            </p>
+                                        </div>
+
+                                        {/* Cover Image */}
+                                        <div className="relative aspect-[2/3] w-full overflow-hidden rounded-lg shadow-lg border border-border/50 bg-secondary/20">
+                                            <img
+                                                src="/images/confident-mind.jpg"
+                                                alt="The Confident Mind by Dr. Nate Zinsser"
+                                                className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                            {/* Subtle gradient overlay for depth */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                                        </div>
                                     </div>
                                 </a>
                             </div>
