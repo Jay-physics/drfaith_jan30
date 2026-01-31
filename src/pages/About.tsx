@@ -103,45 +103,45 @@ const About = () => {
           </div>
 
           {/* Right Column: Psychology Today Feature */}
-          <div className="sticky top-8">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-1 bg-[#1b5c92] rounded-full"></div>
-              <h3 className="text-xl font-medium text-foreground">Psychology Today</h3>
-            </div>
-
+          <div className="h-full">
             <a
               href="https://www.psychologytoday.com/us/psychiatrists/faith-consiglio-new-york-ny/998633"
               target="_blank"
               rel="noopener noreferrer"
-              className="block group relative bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-500 hover:shadow-2xl"
+              className="block group relative bg-card rounded-xl shadow-sm border border-border overflow-hidden h-full transition-all duration-300 hover:shadow-md"
             >
-              {/* Header / Badge */}
-              <div className="absolute top-4 right-4 z-20 flex flex-col items-end">
-                <div className="bg-[#1b5c92] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-2 mb-2 group-hover:scale-105 transition-transform">
-                  <span>Verified Psychiatrist</span>
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                </div>
-                <div className="bg-white/90 backdrop-blur-sm text-xs text-foreground px-3 py-1.5 rounded-full shadow-sm border border-border opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0">
-                  Click to view full profile <ExternalLink className="w-3 h-3 inline ml-1" />
+              {/* Header inside the container */}
+              <div className="absolute top-0 left-0 right-0 p-6 z-20 bg-gradient-to-b from-white via-white/80 to-transparent">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-full bg-[#1b5c92]/10 text-[#1b5c92]">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-medium text-foreground">Psychology Today</h3>
                 </div>
               </div>
 
-              {/* Profile Preview Image Container */}
-              <div className="relative w-full transition-all duration-700 ease-in-out h-64 group-hover:h-[600px] overflow-hidden bg-gray-50">
+              {/* Profile Preview Image */}
+              <div className="absolute inset-0 top-20 pt-4 px-4 overflow-hidden bg-gray-50/50">
                 <img
                   src="/images/pt-profile.png"
                   alt="Psychology Today Profile Preview"
-                  className="w-full h-auto object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-top opacity-90 transition-transform duration-700 group-hover:scale-105 rounded-t-lg shadow-inner border border-border/50"
+                  style={{ maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)' }}
                 />
+              </div>
 
-                {/* Gradient Overlay (The "Halfway" effect) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
-
-                {/* Hover Reveal Text (Optional) */}
-                <div className="absolute bottom-4 left-0 right-0 text-center z-20 group-hover:opacity-0 transition-opacity duration-300">
-                  <span className="text-[#1b5c92] font-semibold text-sm bg-white/80 px-4 py-1 rounded-full shadow-sm backdrop-blur-sm">
-                    Hover to view profile
-                  </span>
+              {/* Slide-in Overlay (Right Side) */}
+              <div className="absolute inset-0 bg-white/95 backdrop-blur-sm z-30 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col items-center justify-center text-center p-8">
+                <div className="w-16 h-16 bg-[#1b5c92] rounded-full flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 transition-transform duration-500 delay-100">
+                  <span className="text-xl font-serif font-bold text-white">PT</span>
+                </div>
+                <h4 className="text-2xl font-light text-foreground mb-2">View Full Profile</h4>
+                <p className="text-muted-foreground mb-8 max-w-xs">
+                  Click to visit Dr. Faith Consiglio's verified profile on Psychology Today.
+                </p>
+                <div className="flex items-center text-[#1b5c92] font-medium group/btn">
+                  <span>Open Profile</span>
+                  <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </div>
               </div>
             </a>
