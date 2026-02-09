@@ -2,10 +2,8 @@
 
 const Index = () => {
   return (
-    <main className="min-h-screen relative overflow-hidden" style={{ background: 'var(--hero-gradient)' }}>
-      {/* Gradient overlay for additional depth */}
-      <div className="absolute inset-0 opacity-60" style={{ background: 'var(--hero-gradient-overlay)' }}></div>
-      
+    <main className="min-h-screen relative overflow-hidden">
+
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
@@ -64,9 +62,9 @@ const Index = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="relative">
-                <img 
-                  src="/images/dr-faith-consiglio.png" 
-                  alt="Dr. Faith Consiglio - Board Certified Psychiatrist" 
+                <img
+                  src="/images/dr-faith-consiglio.png"
+                  alt="Dr. Faith Consiglio - Board Certified Psychiatrist"
                   className="w-80 h-96 object-contain rounded-2xl shadow-2xl"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
@@ -74,7 +72,7 @@ const Index = () => {
                   }}
                 />
               </div>
-              
+
               {/* Doctor Info Card */}
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-card border border-border rounded-lg px-4 py-2 shadow-lg">

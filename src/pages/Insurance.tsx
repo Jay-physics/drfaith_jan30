@@ -1,6 +1,6 @@
 const Insurance = () => {
   return (
-    <main className="min-h-screen bg-background py-12">
+    <main className="min-h-screen py-12">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">

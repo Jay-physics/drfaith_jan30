@@ -128,6 +128,12 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(to bottom, rgba(255, 230, 200, 0.6), rgba(255, 255, 255, 0.3)), url('/images/hopeful-background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay, normal;
   }
 }
 

@@ -3,7 +3,7 @@ import { ExternalLink, FileText, Phone, HeartPulse, BookOpen } from "lucide-reac
 
 const Resources = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen">
             {/* Hero Section */}
             <section className="relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/10"></div>
