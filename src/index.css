@@ -133,15 +133,18 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: transparent;
     display: grid;
     min-height: 100vh;
-    background-image: url('/images/hopeful-background.png');
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/backdrop.png');
     background-size: 100vw 100vh;
-    /* Force entire image to fit viewport */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-blend-mode: normal;
 
   }
 }
