@@ -14,7 +14,7 @@ const Index = () => {
                 <br />
                 <span className="text-orange-600">Mental Health Care</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+              <p className="text-lg text-slate-900 font-medium leading-relaxed max-w-lg">
                 Integrating medication management and psychotherapy to support your physical, mental, and social well-being. General Adult Psychiatry, emphasis on depression, anxiety, ADHD, OCD, women's health, sports/performance psychiatry.
               </p>
             </div>
