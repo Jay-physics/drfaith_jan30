@@ -5,15 +5,9 @@ import { GraduationCap, Award, Heart, Brain, ExternalLink, CheckCircle2 } from "
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        {/* Background with subtle gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/10"></div>
-
-        {/* Subtle decorative elements */}
-        <div className="absolute top-8 left-1/3 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-8 right-1/3 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
 
         <div className="relative max-w-4xl mx-auto text-center">
           {/* Refined heading */}
