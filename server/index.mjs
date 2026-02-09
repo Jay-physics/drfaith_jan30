@@ -5,12 +5,22 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import nodemailer from "nodemailer";
 import { z } from "zod";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = Number.parseInt(process.env.PORT ?? "3001", 10);
 
 // Bulletproof security headers
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false, // Disable CSP for now if it conflicts with scripts/styles
+    crossOriginEmbedderPolicy: false,
+  })
+);
 
 // Rate limiting: 10 requests per 15 minutes per IP
 const limiter = rateLimit({
@@ -41,15 +51,20 @@ app.use(
         if (allowedOrigins.indexOf(origin) !== -1) {
           return callback(null, true);
         } else {
+          try {
+            // Also allow localhost/127.0.0.1 if not explicitly in allowedOrigins list but passing locally
+            const url = new URL(origin);
+            if (url.hostname === "localhost" || url.hostname === "127.0.0.1") {
+              return callback(null, true);
+            }
+          } catch (e) {
+            // ignore
+          }
           return callback(new Error("Not allowed by CORS"));
         }
       }
 
-      // Default fallback: allow all (or change to false for stricter default if desired)
-      // For "bulletproof" but usable, usually we want to restrict. 
-      // If no env var is set, we'll default to allowing localhost for dev, but block others?
-      // For this implementation, if NO allowedOrigins lists are provided, we'll allow all (assuming public API or dev),
-      // but if provided, we strictly enforce.
+      // Default fallback: allow all
       return callback(null, true);
     },
   }),
@@ -191,6 +206,20 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+// Handle API 404s specifically so they don't return HTML
+app.all("/api/*", (req, res) => {
+  res.status(404).json({ error: "API endpoint not found" });
+});
+
+// Serve Manifest/Static Files
+const distPath = path.join(__dirname, "../dist");
+app.use(express.static(distPath));
+
+// SPA Fallback: Serve index.html for any unknown route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -198,7 +227,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Contact form server listening on port ${port}`);
+  console.log(`Server listening on port ${port}`);
   if (!process.env.ALLOWED_ORIGINS) {
     console.warn("WARNING: ALLOWED_ORIGINS not set. CORS is permissive.");
   }
