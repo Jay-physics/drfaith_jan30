@@ -128,7 +128,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to bottom, rgba(255, 230, 200, 0.6), rgba(255, 255, 255, 0.3)), url('/images/hopeful-background.png');
+    /* Updated pleasing and positive backdrop merge */
+    background-image: 
+      linear-gradient(to bottom, 
+        rgba(255, 250, 250, 0.90) 0%,      /* Very light white/pink top */
+        rgba(255, 240, 230, 0.75) 50%,     /* Soft peach middle */
+        rgba(255, 228, 200, 0.60) 100%     /* Warm golden bottom */
+      ),
+      url('/images/hopeful-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
