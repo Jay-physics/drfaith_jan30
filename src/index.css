@@ -134,14 +134,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    /* Updated to retain blue sky and reduce yellow/orange tint */
-    /* Updated to prioritize showing the blue sky at the top */
-    background-image: url('/images/hopeful-background.png');
-    background-size: cover;
-    background-position: top center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-blend-mode: normal;
+
   }
 }
 
