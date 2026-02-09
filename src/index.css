@@ -22,12 +22,15 @@ All colors MUST be HSL.
 
     --nav-primary: 218 52% 48%;
     --nav-primary-foreground: 210 20% 98%;
-    --nav-hover: 320 100% 75%; /* Pink from logo */
-    
+    --nav-hover: 320 100% 75%;
+    /* Pink from logo */
+
     /* Footer colors */
-    --footer-bg: 218 65% 18%; /* Deep navy blue #0F2A5C */
+    --footer-bg: 218 65% 18%;
+    /* Deep navy blue #0F2A5C */
     --footer-foreground: 210 20% 98%;
-    --footer-accent: 320 100% 75%; /* Pink accent */
+    --footer-accent: 320 100% 75%;
+    /* Pink accent */
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 215 28% 17%;
@@ -83,12 +86,15 @@ All colors MUST be HSL.
 
     --nav-primary: 218 52% 48%;
     --nav-primary-foreground: 210 20% 98%;
-    --nav-hover: 320 100% 75%; /* Pink from logo */
-    
+    --nav-hover: 320 100% 75%;
+    /* Pink from logo */
+
     /* Footer colors */
-    --footer-bg: 218 65% 18%; /* Deep navy blue #0F2A5C */
+    --footer-bg: 218 65% 18%;
+    /* Deep navy blue #0F2A5C */
     --footer-foreground: 210 20% 98%;
-    --footer-accent: 320 100% 75%; /* Pink accent */
+    --footer-accent: 320 100% 75%;
+    /* Pink accent */
 
     --secondary: 215 28% 25%;
     --secondary-foreground: 210 20% 98%;
@@ -105,11 +111,11 @@ All colors MUST be HSL.
     --border: 215 28% 25%;
     --input: 215 28% 25%;
     --ring: 215 88% 52%;
-    
+
     /* Hero gradient backgrounds - dark mode */
     --hero-gradient: linear-gradient(135deg, hsl(215 28% 19%) 0%, hsl(218 30% 22%) 25%, hsl(215 25% 20%) 50%, hsl(210 20% 18%) 75%, hsl(208 18% 16%) 100%);
     --hero-gradient-overlay: linear-gradient(180deg, hsl(215 28% 17% / 0.95) 0%, hsl(218 25% 20% / 0.8) 50%, hsl(210 20% 15% / 0.9) 100%);
-    
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -128,19 +134,22 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    /* Updated pleasing and positive backdrop merge */
-    background-image: 
-      linear-gradient(to bottom, 
-        rgba(255, 250, 250, 0.90) 0%,      /* Very light white/pink top */
-        rgba(255, 240, 230, 0.75) 50%,     /* Soft peach middle */
-        rgba(255, 228, 200, 0.60) 100%     /* Warm golden bottom */
+    /* Updated to retain blue sky and reduce yellow/orange tint */
+    background-image:
+      linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.0) 0%,
+        /* Transparent top to show clear blue sky */
+        rgba(255, 255, 255, 0.2) 50%,
+        /* Very subtle transition */
+        rgba(255, 250, 250, 0.4) 100%
+        /* Gentle, neutral positivity at bottom */
       ),
       url('/images/hopeful-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-blend-mode: overlay, normal;
+    background-blend-mode: normal;
   }
 }
 
@@ -148,9 +157,11 @@ All colors MUST be HSL.
   .animate-blob {
     animation: blob 7s infinite;
   }
+
   .animation-delay-2000 {
     animation-delay: 2s;
   }
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -160,12 +171,15 @@ All colors MUST be HSL.
   0% {
     transform: translate(0px, 0px) scale(1);
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
+
   100% {
     transform: translate(0px, 0px) scale(1);
   }
