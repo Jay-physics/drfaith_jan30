@@ -135,18 +135,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     /* Updated to retain blue sky and reduce yellow/orange tint */
-    background-image:
-      linear-gradient(to bottom,
-        rgba(255, 255, 255, 0.0) 0%,
-        /* Transparent top to show clear blue sky */
-        rgba(255, 255, 255, 0.2) 50%,
-        /* Very subtle transition */
-        rgba(255, 250, 250, 0.4) 100%
-        /* Gentle, neutral positivity at bottom */
-      ),
-      url('/images/hopeful-background.png');
+    /* Updated to prioritize showing the blue sky at the top */
+    background-image: url('/images/hopeful-background.png');
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-blend-mode: normal;
