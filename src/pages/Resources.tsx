@@ -134,40 +134,72 @@ const Resources = () => {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-4">
-                                <div className="space-y-4">
-                                    <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
-                                        <div className="flex flex-col space-y-3">
-                                            {/* Month Badge */}
-                                            <div className="self-start inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                                                JANUARY 2026
-                                            </div>
+                                <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
+                                    {/* Month Badge */}
+                                    <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-4">
+                                        JANUARY 2026
+                                    </div>
 
-                                            {/* Header Info */}
-                                            <div className="space-y-1">
-                                                <div className="flex items-start justify-between">
-                                                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
-                                                        The Confident Mind
-                                                    </h4>
-                                                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
-                                                </div>
-                                                <p className="text-sm text-muted-foreground italic">
-                                                    by Dr. Nate Zinsser
-                                                </p>
-                                            </div>
-
-                                            {/* Cover Image */}
-                                            <div className="relative aspect-[2/3] w-1/2 mx-auto overflow-hidden rounded-lg shadow-lg border border-border/50 bg-secondary/20">
-                                                <img
-                                                    src="/images/confident-mind.jpg"
-                                                    alt="The Confident Mind by Dr. Nate Zinsser"
-                                                    className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                />
-                                                {/* Subtle gradient overlay for depth */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                                            </div>
+                                    {/* Main Content - Book Cover + Details */}
+                                    <div className="flex gap-4 mb-4">
+                                        {/* Cover Image - Left Side */}
+                                        <div className="relative aspect-[2/3] w-24 flex-shrink-0 overflow-hidden rounded-lg shadow-lg border border-border/50 bg-secondary/20">
+                                            <img
+                                                src="/images/confident-mind.jpg"
+                                                alt="The Confident Mind by Dr. Nate Zinsser"
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
                                         </div>
-                                    </a>
-                                </div>
+
+                                        {/* Book Details - Right Side */}
+                                        <div className="flex-1 space-y-2">
+                                            <div className="flex items-start justify-between gap-2">
+                                                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                                                    The Confident Mind
+                                                </h4>
+                                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+                                            </div>
+                                            <p className="text-sm text-muted-foreground italic">
+                                                by Dr. Nate Zinsser
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Blurb */}
+                                    <div className="mb-4">
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            A great read for anyone looking to build the skill of confident thinking. Written by a leading sports psychologist, this book offers techniques broadly applicable for improving performance and fostering positive self-belief.
+                                        </p>
+                                    </div>
+
+                                    {/* Credentials */}
+                                    <div className="space-y-2 pt-3 border-t border-border/50">
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-xs text-foreground">Board Certified Psychiatrist</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-xs text-foreground">Mindfulness-Based Approaches</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-xs text-foreground">Sports Psychiatry Focused</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </CardContent>
                         </Card>
                     </div>
