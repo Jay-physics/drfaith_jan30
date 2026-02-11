@@ -137,7 +137,7 @@ const Resources = () => {
                                 <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
                                     {/* Month Badge */}
                                     <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-4">
-                                        JANUARY 2026
+                                        FEBRUARY 2026
                                     </div>
 
                                     {/* Main Content - Book Cover + Details */}
@@ -165,39 +165,14 @@ const Resources = () => {
                                         </div>
                                     </div>
 
-                                    {/* Blurb */}
-                                    <div className="mb-4">
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                            A great read for anyone looking to build the skill of confident thinking. Written by a leading sports psychologist, this book offers techniques broadly applicable for improving performance and fostering positive self-belief.
+                                    {/* Blurb with Quote */}
+                                    <div className="border-l-4 border-primary/30 pl-4 py-2 bg-primary/5 rounded-r">
+                                        <p className="text-sm text-muted-foreground leading-relaxed italic">
+                                            "A great read for anyone looking to build the skill of confident thinking. Written by a leading sports psychologist, this book offers techniques broadly applicable for improving performance and fostering positive self-belief."
                                         </p>
-                                    </div>
-
-                                    {/* Credentials */}
-                                    <div className="space-y-2 pt-3 border-t border-border/50">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                </svg>
-                                            </div>
-                                            <span className="text-xs text-foreground">Board Certified Psychiatrist</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                </svg>
-                                            </div>
-                                            <span className="text-xs text-foreground">Mindfulness-Based Approaches</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                </svg>
-                                            </div>
-                                            <span className="text-xs text-foreground">Sports Psychiatry Focused</span>
-                                        </div>
+                                        <p className="text-xs text-primary font-medium mt-2">
+                                            — Dr. Faith Consiglio
+                                        </p>
                                     </div>
                                 </a>
                             </CardContent>
