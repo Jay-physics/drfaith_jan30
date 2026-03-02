@@ -133,7 +133,53 @@ const Resources = () => {
                                     Monthly readings for growth
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent className="space-y-4">
+                            <CardContent className="space-y-6">
+                                {/* March 2026 */}
+                                <a href="https://www.goodreads.com/book/show/9547888-attached" target="_blank" rel="noopener noreferrer" className="block group">
+                                    {/* Month Badge */}
+                                    <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-4">
+                                        MARCH 2026
+                                    </div>
+
+                                    {/* Main Content - Book Cover + Details */}
+                                    <div className="flex gap-4 mb-4">
+                                        {/* Cover Image - Left Side */}
+                                        <div className="relative aspect-[2/3] w-24 flex-shrink-0 overflow-hidden rounded-lg shadow-lg border border-border/50 bg-secondary/20">
+                                            <img
+                                                src="/images/march.png"
+                                                alt="Attached by Amir Levine and Rachel Heller"
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
+
+                                        {/* Book Details - Right Side */}
+                                        <div className="flex-1 space-y-2">
+                                            <div className="flex items-start justify-between gap-2">
+                                                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                                                    Attached
+                                                </h4>
+                                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+                                            </div>
+                                            <p className="text-sm text-muted-foreground italic">
+                                                by Amir Levine & Rachel Heller
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Blurb with Quote */}
+                                    <div className="border-l-4 border-primary/30 pl-4 py-2 bg-primary/5 rounded-r">
+                                        <p className="text-sm text-muted-foreground leading-relaxed italic">
+                                            "This book offers a helpful guide to understanding attachment styles in adult romantic relationships, including how they are formed in childhood, and how addressing these patterns can help build healthier, more fulfilling connections."
+                                        </p>
+                                        <p className="text-xs text-primary font-medium mt-2">
+                                            — Dr. Faith Consiglio
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <hr className="border-border/50" />
+
+                                {/* February 2026 */}
                                 <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
                                     {/* Month Badge */}
                                     <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-4">
