@@ -34,7 +34,7 @@ const Resources = () => {
 
                     {/* Crisis Support - Priority Display */}
                     <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
-                        <Card className="border-destructive/20 shadow-md bg-destructive/5 h-full">
+                        <Card className="border-destructive/20 shadow-md bg-destructive/5 h-fit">
                             <CardHeader>
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 rounded-full bg-destructive/10 text-destructive">
@@ -67,7 +67,7 @@ const Resources = () => {
 
                     {/* Useful Links */}
                     <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
-                        <Card className="border-border shadow-sm hover:shadow-md transition-shadow h-full">
+                        <Card className="border-border shadow-sm hover:shadow-md transition-shadow h-fit">
                             <CardHeader>
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 rounded-full bg-primary/10 text-primary">
@@ -120,8 +120,8 @@ const Resources = () => {
                     </div>
 
                     {/* Book Club */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
-                        <Card className="border-border shadow-sm hover:shadow-md transition-shadow h-full">
+                    <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col gap-6">
+                        <Card className="border-border shadow-sm hover:shadow-md transition-shadow h-fit">
                             <CardHeader>
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 rounded-full bg-primary/10 text-primary">
@@ -176,9 +176,11 @@ const Resources = () => {
                                         </p>
                                     </div>
                                 </a>
+                            </CardContent>
+                        </Card>
 
-                                <hr className="border-border/50" />
-
+                        <Card className="border-border shadow-sm hover:shadow-md transition-shadow h-fit">
+                            <CardContent className="pt-6">
                                 {/* February 2026 */}
                                 <a href="https://www.goodreads.com/book/show/57863475-the-confident-mind" target="_blank" rel="noopener noreferrer" className="block group">
                                     {/* Month Badge */}
