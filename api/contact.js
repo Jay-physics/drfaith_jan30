@@ -1,14 +1,31 @@
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
+// Simple in-memory rate limiter for serverless
+const rateMap = new Map();
+const RATE_WINDOW_MS = 15 * 60 * 1000;
+const RATE_MAX = 10;
+
+function isRateLimited(ip) {
+    const now = Date.now();
+    const entry = rateMap.get(ip);
+    if (!entry || now - entry.start > RATE_WINDOW_MS) {
+        rateMap.set(ip, { start: now, count: 1 });
+        return false;
+    }
+    entry.count++;
+    return entry.count > RATE_MAX;
+}
+
 // Validation Schema
+const nameRegex = /^[a-zA-Z\s'.,-]+$/;
 const contactFormSchema = z.object({
-    firstName: z.string().min(1, "First name is required").trim(),
-    lastName: z.string().min(1, "Last name is required").trim(),
+    firstName: z.string().min(1, "First name is required").max(50).regex(nameRegex, "Invalid characters in name").trim(),
+    lastName: z.string().min(1, "Last name is required").max(50).regex(nameRegex, "Invalid characters in name").trim(),
     email: z.string().email("Invalid email address").trim(),
-    phone: z.string().min(5, "Phone number is too short").trim(),
-    service: z.string().min(1, "Service selection is required").trim(),
-    message: z.string().optional().default(""),
+    phone: z.string().min(5, "Phone number is too short").max(20).trim(),
+    service: z.string().min(1, "Service selection is required").max(100).trim(),
+    message: z.string().max(2000).optional().default(""),
 });
 
 const escapeHtml = (text) => {
@@ -32,9 +49,10 @@ export default async function handler(req, res) {
 
     if (allowedOrigins?.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
-    } else if (!allowedOrigins || allowedOrigins.length === 0) {
-        // Default permissive if no env var set (for testing)
-        res.setHeader('Access-Control-Allow-Origin', '*');
+    }
+    // Reject if ALLOWED_ORIGINS is not configured
+    if (!allowedOrigins || allowedOrigins.length === 0) {
+        return res.status(403).json({ error: "CORS not configured." });
     }
 
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -47,6 +65,12 @@ export default async function handler(req, res) {
 
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Method not allowed" });
+    }
+
+    // Rate limiting
+    const clientIp = req.headers["x-forwarded-for"]?.split(",")[0]?.trim() || "unknown";
+    if (isRateLimited(clientIp)) {
+        return res.status(429).json({ error: "Too many requests, please try again later." });
     }
 
     try {
@@ -127,8 +151,10 @@ export default async function handler(req, res) {
             validData.message || "No additional message provided.",
         ];
 
+        const sanitizedName = `${validData.firstName} ${validData.lastName}`.replace(/[^\w\s'.,-]/g, "");
+
         await transporter.sendMail({
-            from: `"${validData.firstName} ${validData.lastName}" <${process.env.SMTP_USER}>`,
+            from: `"${sanitizedName}" <${process.env.SMTP_USER}>`,
             to: recipient,
             replyTo: validData.email,
             subject: mailSubject,

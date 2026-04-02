@@ -14,10 +14,20 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = Number.parseInt(process.env.PORT ?? "3001", 10);
 
-// Bulletproof security headers
+// Security headers
 app.use(
   helmet({
-    contentSecurityPolicy: false, // Disable CSP for now if it conflicts with scripts/styles
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "https://www.google.com", "https://www.gstatic.com"],
+        frameSrc: ["'self'", "https://www.google.com"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        imgSrc: ["'self'", "data:"],
+        connectSrc: ["'self'"],
+      },
+    },
     crossOriginEmbedderPolicy: false,
   })
 );
@@ -43,43 +53,31 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin) return callback(null, true);
-
       // If allowedOrigins is defined, check against it
       if (allowedOrigins?.length) {
         if (allowedOrigins.indexOf(origin) !== -1) {
           return callback(null, true);
-        } else {
-          try {
-            // Also allow localhost/127.0.0.1 if not explicitly in allowedOrigins list but passing locally
-            const url = new URL(origin);
-            if (url.hostname === "localhost" || url.hostname === "127.0.0.1") {
-              return callback(null, true);
-            }
-          } catch (e) {
-            // ignore
-          }
-          return callback(new Error("Not allowed by CORS"));
         }
+        return callback(new Error("Not allowed by CORS"));
       }
 
-      // Default fallback: allow all
+      // Default fallback: allow all (dev only)
       return callback(null, true);
     },
   }),
 );
 
-app.use(express.json());
+app.use(express.json({ limit: "10kb" }));
 
 // Validation Schema
+const nameRegex = /^[a-zA-Z\s'.,-]+$/;
 const contactFormSchema = z.object({
-  firstName: z.string().min(1, "First name is required").trim(),
-  lastName: z.string().min(1, "Last name is required").trim(),
+  firstName: z.string().min(1, "First name is required").max(50).regex(nameRegex, "Invalid characters in name").trim(),
+  lastName: z.string().min(1, "Last name is required").max(50).regex(nameRegex, "Invalid characters in name").trim(),
   email: z.string().email("Invalid email address").trim(),
-  phone: z.string().min(5, "Phone number is too short").trim(),
-  service: z.string().min(1, "Service selection is required").trim(),
-  message: z.string().optional().default(""),
+  phone: z.string().min(5, "Phone number is too short").max(20).trim(),
+  service: z.string().min(1, "Service selection is required").max(100).trim(),
+  message: z.string().max(2000).optional().default(""),
 });
 
 const transporter = nodemailer.createTransport({
@@ -177,8 +175,10 @@ app.post("/api/contact", async (req, res) => {
       validData.message || "No additional message provided.",
     ];
 
+    const sanitizedName = `${validData.firstName} ${validData.lastName}`.replace(/[^\w\s'.,-]/g, "");
+
     await transporter.sendMail({
-      from: `"${validData.firstName} ${validData.lastName}" <${process.env.SMTP_USER}>`,
+      from: `"${sanitizedName}" <${process.env.SMTP_USER}>`,
       to: recipient,
       replyTo: validData.email,
       subject: mailSubject,
