@@ -27,18 +27,18 @@ const Resources = () => {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+            <section className="relative overflow-hidden py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/10"></div>
 
                 <div className="relative max-w-4xl mx-auto text-center">
                     <div className="mb-4 space-y-1">
-                        <h1 className="text-4xl md:text-5xl font-light bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent leading-tight tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-light bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent leading-tight tracking-tight">
                             PATIENT RESOURCES
                         </h1>
                     </div>
 
                     <div className="max-w-3xl mx-auto space-y-3">
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                             Helpful tools and information for your mental health journey
                         </p>
 
@@ -51,15 +51,15 @@ const Resources = () => {
                 </div>
             </section>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                 <Tabs defaultValue="resources" className="w-full">
-                    <TabsList className="mb-8">
+                    <TabsList className="mb-6 sm:mb-8 w-full sm:w-auto grid grid-cols-2 sm:inline-flex">
                         <TabsTrigger value="resources">Resources</TabsTrigger>
                         <TabsTrigger value="bookclub">Book Club</TabsTrigger>
                     </TabsList>
 
                     <TabsContent value="resources">
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             {/* Crisis Support */}
                             <Card className="border-destructive/20 shadow-md bg-destructive/5">
                                 <CardHeader>
@@ -124,7 +124,7 @@ const Resources = () => {
                     </TabsContent>
 
                     <TabsContent value="bookclub">
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                             {books.map((book) => (
                                 <Card key={book.month} className="border-border shadow-sm hover:shadow-md transition-shadow">
                                     <CardContent className="pt-6">
