@@ -80,6 +80,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/book-club"
+                  className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
+                >
+                  Book Club
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-[hsl(var(--footer-foreground))]/80 hover:text-[hsl(var(--footer-accent))] transition-colors"
                 >
