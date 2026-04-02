@@ -4,6 +4,15 @@ import { ExternalLink, Phone, HeartPulse, BookOpen } from "lucide-react";
 
 const books = [
     {
+        month: "APRIL 2026",
+        title: "How to ADHD",
+        author: "Jessica McCabe",
+        image: "/images/april.png",
+        alt: "How to ADHD by Jessica McCabe",
+        url: "https://www.goodreads.com/book/show/125227576-how-to-adhd",
+        quote: "This book offers practical strategies for managing ADHD, and provides a helpful guide for understanding and validating its symptoms.",
+    },
+    {
         month: "MARCH 2026",
         title: "Attached",
         author: "Amir Levine & Rachel Heller",
