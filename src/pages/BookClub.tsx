@@ -3,6 +3,15 @@ import { ExternalLink } from "lucide-react";
 
 const books = [
     {
+        month: "MAY 2026",
+        title: "The Inner Game of Tennis",
+        author: "W. Timothy Gallwey",
+        image: "/images/may_2026.png",
+        alt: "The Inner Game of Tennis",
+        url: "https://www.goodreads.com/book/show/905.The_Inner_Game_of_Tennis",
+        quote: "This book offers strategies for achieving the state of relaxed concentration, which allows peak performance both in sports and in life.",
+    },
+    {
         month: "APRIL 2026",
         title: "How to ADHD",
         author: "Jessica McCabe",
