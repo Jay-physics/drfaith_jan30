@@ -3,6 +3,15 @@ import { ExternalLink } from "lucide-react";
 
 const books = [
     {
+        month: "JUNE 2026",
+        title: "Range",
+        author: "David Epstein",
+        image: "/images/june_2026.png",
+        alt: "Range by David Epstein",
+        url: "https://drfaithconsiglio.com/book-club",
+        quote: "A book highlighting how broadening experiences and exploratory paths can be advantageous in our modern world.",
+    },
+    {
         month: "MAY 2026",
         title: "The Inner Game of Tennis",
         author: "W. Timothy Gallwey",
