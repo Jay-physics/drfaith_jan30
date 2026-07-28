@@ -3,6 +3,15 @@ import { ExternalLink } from "lucide-react";
 
 const books = [
     {
+        month: "JULY 2026",
+        title: "ADHD in Sport",
+        author: "Dr. Josephine Perry",
+        image: "/images/july_2026.png",
+        alt: "ADHD in Sport by Dr. Josephine Perry",
+        url: "https://www.goodreads.com/book/show/230935938-adhd-in-sport",
+        quote: "A helpful guide for athletes learning to use ADHD to their advantage.",
+    },
+    {
         month: "JUNE 2026",
         title: "Range",
         author: "David Epstein",
