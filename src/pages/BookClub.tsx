@@ -3,6 +3,15 @@ import { ExternalLink } from "lucide-react";
 
 const books = [
     {
+        month: "AUGUST 2026",
+        title: "Adult Children of Emotionally Immature Parents",
+        author: "Lindsay C. Gibson, PsyD",
+        image: "/images/aug_2026.png",
+        alt: "Adult Children of Emotionally Immature Parents by Lindsay C. Gibson",
+        url: "https://www.goodreads.com/book/show/23129659-adult-children-of-emotionally-immature-parents",
+        quote: "A guide for understanding the impact of emotional neglect and how to heal from it",
+    },
+    {
         month: "JULY 2026",
         title: "ADHD in Sport",
         author: "Dr. Josephine Perry",
