@@ -3,6 +3,15 @@ import { ExternalLink } from "lucide-react";
 
 const books = [
     {
+        month: "SEPTEMBER 2026",
+        title: "Mother Hunger, Revised Edition",
+        author: "Kelly McDaniel",
+        image: "/images/September_2026.png",
+        alt: "Mother Hunger, Revised Edition by Kelly McDaniel",
+        url: "https://kellymcdanieltherapy.com/mother-hunger-revised-edition/",
+        quote: "An exploration of how lack of maternal care in childhood affects self-worth, attachment style, and relationships in adulthood",
+    },
+    {
         month: "AUGUST 2026",
         title: "Adult Children of Emotionally Immature Parents",
         author: "Lindsay C. Gibson, PsyD",
